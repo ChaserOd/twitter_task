@@ -129,15 +129,15 @@
   const totalShares = fbShares + xShares;
   const tier = document.getElementById("tierBadge");
 
-  if (totalShares >= 20) {
+  if (totalShares >= 1000) {
     tier.textContent = "🥇 Gold Tier Unlocked";
     tier.className =
       "mt-6 inline-block px-5 py-2 rounded-full text-sm font-bold bg-yellow-500/20 text-yellow-300";
-  } else if (totalShares >= 10) {
+  } else if (totalShares >= 500) {
     tier.textContent = "🥈 Silver Tier Unlocked";
     tier.className =
       "mt-6 inline-block px-5 py-2 rounded-full text-sm font-bold bg-slate-400/20 text-slate-200";
-  } else if (totalShares >= 5) {
+  } else if (totalShares >= 100) {
     tier.textContent = "🥉 Bronze Tier Unlocked";
     tier.className =
       "mt-6 inline-block px-5 py-2 rounded-full text-sm font-bold bg-orange-500/20 text-orange-300";
