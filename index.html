@@ -51,27 +51,87 @@ Complete below tasks of posting daily to become eligible for <strong>airdrop rew
 
       <br /><br />
 
+<script>
+  // Generate or load referral ID
+  let ref = localStorage.getItem("pancono_ref");
+  if (!ref) {
+    ref = "PAN" + Math.random().toString(36).substring(2, 10);
+    localStorage.setItem("pancono_ref", ref);
+  }
+
+  // Build referral link
+  const referralLink = `https://t.me/PanconoWallet_Bot?start=${ref}`;
+</script>
+
+   <br /><br />
+
+    
+
 <h3 class="text-xl font-semibold">Fifth Step: Post at Twitter</h3>
       <br /><br />
 <div class="text-center mt-6">
 Click below Button and daily post message at Twitter.
   <br /> <br /><br />
      <a
-  href="https://twitter.com/intent/tweet?text=%F0%9F%94%A5%20Find%20details%20and%20%F0%9D%97%99%F0%9D%97%BC%F0%9D%97%B9%F0%9D%97%B9%F0%9D%97%BC%F0%9D%98%84%20%F0%9D%97%BA%F0%9D%97%B2%E2%95%B0%E2%94%88%E2%9E%A4%20%40PanconoCoin%0AStart%20Mining%20at%0A%F0%9F%9F%A2Pancono%20Coin%20a%20new%20Layer%201%20Blockchain.%0A%F0%9F%94%B4Droping%201000000%20Panno%20coins.%0A%F0%9F%9F%A1Submit%20%24eth%20wallet%20address.%0A%F0%9F%91%89%20Few%20users%20will%20receive.%0A%F0%9F%91%89%20Comment%20%F0%9F%91%8DLike%20%F0%9F%94%84%20Retweet%0A%23AirdropCrypto%20%23memecoins%20%24btc%20%24eth"
+  id="xShare"
+  href="#"
   target="_blank"
-  class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition"
+  class="inline-block bg-black hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-xl transition"
 >
-  Post  Message on Twitter
+  🚀 Post on X
 </a>
+
+<script>
+  document.getElementById("xShare").addEventListener("click", () => {
+    let count = Number(localStorage.getItem("x_shares") || 0) + 1;
+    localStorage.setItem("x_shares", count);
+
+    const text =
+      "🔥 Pancono Layer 1 Blockchain Airdrop\n" +
+      "Mining Phase 1 LIVE\n" +
+      "Earn PANNO coins by mining blocks\n" +
+      "Join 👉 " + referralLink +
+      "\n#AirdropCrypto #Pancono #Web3";
+
+    const url =
+      "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(text);
+
+    window.open(url, "_blank");
+  });
+</script>
+
  <br /><br /> <br />
   
 <a
-  href="https://www.facebook.com/sharer/sharer.php?u=https://pancono.org&quote=%F0%9F%94%A5%20Find%20details%20at%20%40PanconoCoin%0AStart%20Mining%20now!%0A%F0%9F%9F%A2Pancono%20Coin%20-%20New%20Layer%201%20Blockchain%0A%F0%9F%94%B4Dropping%201,000,000%20Panno%20Coins%0A%F0%9F%9F%A1Submit%20your%20SOL%20wallet%20address%0A%F0%9F%91%89Like%20%7C%20Comment%20%7C%20Share%0A%23AirdropCrypto%20%23memecoins%20%23Pancono"
+  id="fbShare"
+  href="#"
   target="_blank"
   class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition"
 >
   📘 Share on Facebook
 </a>
+
+<script>
+  document.getElementById("fbShare").addEventListener("click", () => {
+    // Track share click
+    let count = Number(localStorage.getItem("fb_shares") || 0) + 1;
+    localStorage.setItem("fb_shares", count);
+
+    const message =
+      "Pancono Layer 1 Blockchain Airdrop.\n" +
+      "Mining & Airdrop Phase 1 has started.\n" +
+      "Mine blocks and earn PANNO coins.\n" +
+      "Join here 👉 " + referralLink;
+
+    const url =
+      "https://www.facebook.com/sharer/sharer.php?" +
+      "u=" + encodeURIComponent(referralLink) +
+      "&quote=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  });
+</script>
 
 
   
