@@ -65,6 +65,20 @@ Complete below tasks of posting daily to become eligible for <strong>airdrop rew
 
    <br /><br />
 
+
+<div class="mt-4 text-slate-300 text-sm">
+  <p>Facebook Shares: <span id="fbCount">0</span></p>
+  <p>X Shares: <span id="xCount">0</span></p>
+</div>
+
+<script>
+  document.getElementById("fbCount").textContent =
+    localStorage.getItem("fb_shares") || 0;
+  document.getElementById("xCount").textContent =
+    localStorage.getItem("x_shares") || 0;
+</script>
+
+  <br /><br />
     
 
 <h3 class="text-xl font-semibold">Fifth Step: Post at Twitter</h3>
